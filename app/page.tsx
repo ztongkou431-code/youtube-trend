@@ -8,27 +8,24 @@ export default async function Home() {
       <h1>🔥 YouTubeトレンドランキング</h1>
 
       <div>
-        {videos.map((video, index) => (
+        {videos.map((video: any, index: number) => (
           <div key={video.id}>
-
-            {/* 順位 */}
             <h2>{index + 1}位</h2>
 
-            {/* リンク */}
             <a
-              href={`https://www.youtube.com/watch?v=${video.id}`}
-              target="_blank"
-            >
-              {/* サムネ */}
-              <img src={video.snippet.thumbnails.medium.url} />
+              href={`https://www.youtube.com/watch?v=${video.id}`}>
+              
+              <img
+                src={video.snippet.thumbnails.medium.url}
+                alt="thumbnail"
+              />
 
-              {/* タイトル */}
               <p>{video.snippet.title}</p>
             </a>
-
           </div>
         ))}
       </div>
     </main>
   );
 }
+
