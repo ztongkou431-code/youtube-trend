@@ -15,7 +15,9 @@ export default async function Home() {
             <h2>{index + 1}位</h2>
 
             <a
-              href="https://www.youtube.com/watch?v={video.id}"
+              href={`https://www.youtube.com/watch?v=${video.id}`}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <img
                 src={video.snippet.thumbnails.medium.url}
@@ -30,3 +32,4 @@ export default async function Home() {
     </main>
   );
 }
+``
