@@ -7,7 +7,9 @@ export default async function Home() {
     <main>
       <h1>🔥 YouTubeトレンドランキング</h1>
 
-      <p>最新のYouTubeトレンド動画をランキング形式で紹介しています。</p>
+      <p>
+        最新のYouTubeトレンド動画をランキング形式で紹介しています。
+      </p>
 
       <div>
         {videos.map((video: any, index: number) => (
