@@ -19,7 +19,6 @@ export default async function Home() {
             <a
               href={`https://www.youtube.com/watch?v=${video.id}`}
               target="_blank"
-              rel="noopener noreferrer"
             >
               <img
                 src={video.snippet.thumbnails.medium.url}
