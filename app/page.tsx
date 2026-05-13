@@ -7,7 +7,8 @@ export default async function Home() {
 
   return (
     <main>
-      <h1>🔥 YouTubeトレンド</h1>
+      <h1>【2026最新版】YouTube人気動画ランキングTOP100</h1>
+    
 
       <div className="grid">
         {firstPage.map((video: any, index: number) => (
