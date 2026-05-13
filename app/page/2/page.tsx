@@ -14,11 +14,7 @@ export default async function Page2() {
           <div key={video.id}>
             <p>{index + 51}位</p>
 
-            <a
-              href={`https://www.youtube.com/watch?v=${video.id}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link href={`/video/${video.id}`}>
               <img
                 src={video.snippet.thumbnails.medium.url}
                 alt={video.snippet.title}
@@ -27,17 +23,19 @@ export default async function Page2() {
               <p>{video.snippet.title}</p>
 
               <p>
-                {video.snippet.description.slice(0, 60)}...
+                この動画では「{video.snippet.title}」について紹介されています。
+                現在YouTubeで人気のトレンド動画です。
               </p>
-            </a>
+            </Link>
           </div>
         ))}
       </div>
 
-      {/* ✅ 戻るボタン */}
+      {/* 戻る */}
       <div style={{ marginTop: "20px" }}>
         <Link href="/">← 戻る</Link>
       </div>
     </main>
   );
 }
+``

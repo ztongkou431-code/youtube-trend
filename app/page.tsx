@@ -14,11 +14,7 @@ export default async function Home() {
           <div key={video.id}>
             <p>{index + 1}位</p>
 
-            <a
-              href={`https://www.youtube.com/watch?v=${video.id}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link href={`/video/${video.id}`}>
               <img
                 src={video.snippet.thumbnails.medium.url}
                 alt={video.snippet.title}
@@ -27,18 +23,19 @@ export default async function Home() {
               <p>{video.snippet.title}</p>
 
               <p>
-  この動画では「{video.snippet.title}」について紹介されています。
-  現在YouTubeで人気のトレンド動画です。
+                この動画では「{video.snippet.title}」について紹介されています。
+                現在YouTubeで人気のトレンド動画です。
               </p>
-            </a>
+            </Link>
           </div>
         ))}
       </div>
 
-      {/* ✅ 次へボタン */}
+      {/* 次へ */}
       <div style={{ marginTop: "20px" }}>
         <Link href="/page/2">次へ →</Link>
       </div>
     </main>
   );
 }
+``
