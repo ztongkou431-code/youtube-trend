@@ -12,9 +12,12 @@ export default async function Home() {
       <div className="grid">
         {firstPage.map((video: any, index: number) => (
           <div key={video.id}>
+            <p>{index + 1}位</p>
+
             <a
               href={`https://www.youtube.com/watch?v=${video.id}`}
               target="_blank"
+              rel="noopener noreferrer"
             >
               <img
                 src={video.snippet.thumbnails.medium.url}
@@ -26,8 +29,10 @@ export default async function Home() {
         ))}
       </div>
 
-      {/* 次のページリンク */}
-      <Link href="/page/2">次へ →</Link>
+      {/* 次へボタン */}
+      <div style={{ marginTop: "20px" }}>
+        <Link href="/page/2">次へ →</Link>
+      </div>
     </main>
   );
 }

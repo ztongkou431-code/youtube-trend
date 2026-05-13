@@ -3,7 +3,6 @@ import { getTrendingVideos } from "../../../lib/youtube";
 
 export default async function Page2() {
   const videos = await getTrendingVideos();
-
   const secondPage = videos.slice(50, 100);
 
   return (
@@ -13,6 +12,8 @@ export default async function Page2() {
       <div className="grid">
         {secondPage.map((video: any, index: number) => (
           <div key={video.id}>
+            <p>{index + 51}位</p>
+
             <a
               href={`https://www.youtube.com/watch?v=${video.id}`}
               target="_blank"
@@ -28,7 +29,10 @@ export default async function Page2() {
         ))}
       </div>
 
-      <Link href="/">← 戻る</Link>
+      {/* 戻るボタン */}
+      <div style={{ marginTop: "20px" }}>
+        <Link href="/">← 戻る</Link>
+      </div>
     </main>
   );
 }
