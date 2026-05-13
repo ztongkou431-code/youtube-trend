@@ -1,11 +1,12 @@
-import { getTrendingVideos } from "../../../lib/youtube";
-
 export default async function VideoPage({ params }: any) {
-  const videos = await getTrendingVideos();
+  const API_KEY = process.env.YOUTUBE_API_KEY;
 
-  const video = videos.find(
-    (v: any) => v.id === params.id
+  const res = await fetch(
+    `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${params.id}&key=${API_KEY}`
   );
+
+  const data = await res.json();
+  const video = data.items[0];
 
   if (!video) {
     return <p>動画が見つかりません</p>;
@@ -34,3 +35,4 @@ export default async function VideoPage({ params }: any) {
     </main>
   );
 }
+``
