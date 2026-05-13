@@ -9,8 +9,8 @@ export default async function Home() {
 
       <div
         style={{
-          display: "flex",
-          flexWrap: "wrap",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
           gap: "20px",
         }}
       >
@@ -18,13 +18,13 @@ export default async function Home() {
           <div
             key={video.id}
             style={{
-              width: "300px",
-              border: "1px solid #ccc",
+              border: "1px solid #ddd",
               borderRadius: "10px",
               padding: "10px",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
             }}
           >
-            <p>{index + 1}位</p>
+            <p>#{index + 1}</p>
 
             <a
               href={`https://www.youtube.com/watch?v=${video.id}`}
@@ -34,10 +34,12 @@ export default async function Home() {
               <img
                 src={video.snippet.thumbnails.medium.url}
                 alt={video.snippet.title}
-                width="100%"
+                style={{ width: "100%", borderRadius: "8px" }}
               />
 
-              <p>{video.snippet.title}</p>
+              <p style={{ marginTop: "10px" }}>
+                {video.snippet.title}
+              </p>
             </a>
           </div>
         ))}
@@ -45,3 +47,4 @@ export default async function Home() {
     </main>
   );
 }
+``
