@@ -27,7 +27,8 @@ export default async function Home() {
               <p>{video.snippet.title}</p>
 
               <p>
-                {video.snippet.description.slice(0, 60)}...
+  この動画では「{video.snippet.title}」について紹介されています。
+  現在YouTubeで人気のトレンド動画です。
               </p>
             </a>
           </div>
