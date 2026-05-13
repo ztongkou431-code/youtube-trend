@@ -23,13 +23,13 @@ export default async function VideoPage({ params }: any) {
       />
 
       <p>
-        この動画では「{video.snippet.title}」について紹介されています。
+        この動画では「{video.snippet.title}」について詳しく紹介されています。
+        現在YouTubeで話題の人気動画です。
       </p>
 
       <a
         href={`https://www.youtube.com/watch?v=${video.id}`}
         target="_blank"
-        rel="noopener noreferrer"
       >
         ▶ YouTubeで見る
       </a>

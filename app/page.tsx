@@ -7,14 +7,19 @@ export default async function Home() {
 
   return (
     <main>
-      <h1>🔥 YouTubeトレンド</h1>
+      <h1>🔥 YouTubeトレンドランキング TOP100</h1>
+
+      <p>
+        最新のYouTube人気動画をランキング形式で紹介しています。
+        今話題のトレンド動画をチェックできます。
+      </p>
 
       <div className="grid">
         {firstPage.map((video: any, index: number) => (
           <div key={video.id}>
             <p>{index + 1}位</p>
 
-            {/* ✅ ここが重要 */}
+            {/* ✅ 正しいLink構造 */}
             <Link href={`/video/${video.id}`}>
               <img
                 src={video.snippet.thumbnails.medium.url}
@@ -31,7 +36,9 @@ export default async function Home() {
           </div>
         ))}
       </div>
+
+      {/* 次のページ */}
+      <Link href="/page/2">次へ →</Link>
     </main>
   );
 }
-``

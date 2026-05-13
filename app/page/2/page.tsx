@@ -7,7 +7,7 @@ export default async function Page2() {
 
   return (
     <main>
-      <h1>🔥 YouTubeトレンド（続き）</h1>
+      <h1>🔥 YouTubeトレンドランキング（続き）</h1>
 
       <div className="grid">
         {secondPage.map((video: any, index: number) => (
@@ -31,10 +31,7 @@ export default async function Page2() {
         ))}
       </div>
 
-      {/* 戻る */}
-      <div style={{ marginTop: "20px" }}>
-        <Link href="/">← 戻る</Link>
-      </div>
+      <Link href="/">← 戻る</Link>
     </main>
   );
 }
