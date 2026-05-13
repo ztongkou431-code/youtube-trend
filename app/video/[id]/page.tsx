@@ -7,8 +7,6 @@ export default async function VideoPage({ params }: any) {
 
   const data = await res.json();
 
-  console.log(data); // ← デバッグ用（見てもOK）
-
   if (!data.items || data.items.length === 0) {
     return <p>動画が見つかりません</p>;
   }
@@ -26,7 +24,6 @@ export default async function VideoPage({ params }: any) {
 
       <p>
         この動画では「{video.snippet.title}」について紹介されています。
-        現在YouTubeで人気のトレンド動画です。
       </p>
 
       <a

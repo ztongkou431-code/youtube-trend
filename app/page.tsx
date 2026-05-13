@@ -14,6 +14,7 @@ export default async function Home() {
           <div key={video.id}>
             <p>{index + 1}位</p>
 
+            {/* ✅ ここが重要 */}
             <Link href={`/video/${video.id}`}>
               <img
                 src={video.snippet.thumbnails.medium.url}
@@ -29,11 +30,6 @@ export default async function Home() {
             </Link>
           </div>
         ))}
-      </div>
-
-      {/* 次へ */}
-      <div style={{ marginTop: "20px" }}>
-        <Link href="/page/2">次へ →</Link>
       </div>
     </main>
   );
