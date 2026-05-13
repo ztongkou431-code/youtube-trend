@@ -23,7 +23,12 @@ export default async function Page2() {
                 src={video.snippet.thumbnails.medium.url}
                 alt={video.snippet.title}
               />
+
               <p>{video.snippet.title}</p>
+
+              <p>
+                {video.snippet.description.slice(0, 60)}...
+              </p>
             </a>
           </div>
         ))}

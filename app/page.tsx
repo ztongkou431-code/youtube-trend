@@ -7,8 +7,7 @@ export default async function Home() {
 
   return (
     <main>
-      <h1>【2026最新版】YouTube人気動画ランキングTOP100</h1>
-    
+      <h1>🔥 YouTubeトレンド</h1>
 
       <div className="grid">
         {firstPage.map((video: any, index: number) => (
@@ -24,11 +23,12 @@ export default async function Home() {
                 src={video.snippet.thumbnails.medium.url}
                 alt={video.snippet.title}
               />
-              <p>{video.snippet.title}</p>
-<p>
-  {video.snippet.description.slice(0, 60)}...
-</p>
 
+              <p>{video.snippet.title}</p>
+
+              <p>
+                {video.snippet.description.slice(0, 60)}...
+              </p>
             </a>
           </div>
         ))}
