@@ -1,14 +1,22 @@
 export default async function VideoPage({ params }: any) {
   const API_KEY = process.env.YOUTUBE_API_KEY;
 
+  // ✅ APIで動画取得（ここが最重要）
   const res = await fetch(
-    `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${params.id}&key=${API_KEY}`
+    `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${params.id}&key=${API_KEY}`,
+    { cache: "no-store" }
   );
 
   const data = await res.json();
 
+  // ✅ データなければ表示
   if (!data.items || data.items.length === 0) {
-    return <p>動画が見つかりません</p>;
+    return (
+      <main>
+        <h1>動画が見つかりません</h1>
+        <p>ID: {params.id}</p>
+      </main>
+    );
   }
 
   const video = data.items[0];
@@ -24,7 +32,6 @@ export default async function VideoPage({ params }: any) {
 
       <p>
         この動画では「{video.snippet.title}」について詳しく紹介されています。
-        現在YouTubeで話題の人気動画です。
       </p>
 
       <a
@@ -36,3 +43,4 @@ export default async function VideoPage({ params }: any) {
     </main>
   );
 }
+``
