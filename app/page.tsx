@@ -24,6 +24,10 @@ export default async function Home() {
                 alt={video.snippet.title}
               />
               <p>{video.snippet.title}</p>
+<p>
+  {video.snippet.description.slice(0, 60)}...
+</p>
+
             </a>
           </div>
         ))}
