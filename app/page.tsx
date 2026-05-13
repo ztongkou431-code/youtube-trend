@@ -5,7 +5,8 @@ export default async function Home() {
 
   return (
     <main style={{ padding: "20px" }}>
-      <h1>🔥 YouTubeトレンド</h1>
+      <h1>🔥 【2026最新】YouTubeトレンドランキング（日本）</h1>
+
 
       <div
         style={{
@@ -24,7 +25,11 @@ export default async function Home() {
               boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
             }}
           >
-            <p>#{index + 1}</p>
+            <p>
+最新のYouTube人気動画ランキングを毎日更新しています。
+今バズっている動画をチェックできます。
+</p>
+
 
             <a
               href={`https://www.youtube.com/watch?v=${video.id}`}
