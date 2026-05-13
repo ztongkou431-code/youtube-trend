@@ -29,7 +29,7 @@ export default async function Home() {
         ))}
       </div>
 
-      {/* 次へボタン */}
+      {/* ✅ 次へボタン */}
       <div style={{ marginTop: "20px" }}>
         <Link href="/page/2">次へ →</Link>
       </div>

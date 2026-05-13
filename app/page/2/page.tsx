@@ -29,7 +29,7 @@ export default async function Page2() {
         ))}
       </div>
 
-      {/* 戻るボタン */}
+      {/* ✅ 戻るボタン */}
       <div style={{ marginTop: "20px" }}>
         <Link href="/">← 戻る</Link>
       </div>
