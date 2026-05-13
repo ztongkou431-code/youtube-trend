@@ -4,12 +4,26 @@ export default async function Home() {
   const videos = await getTrendingVideos();
 
   return (
-    <main>
+    <main style={{ padding: "20px" }}>
       <h1>🔥 YouTubeトレンド</h1>
 
-      <ul>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: "20px",
+        }}
+      >
         {videos.map((video: any, index: number) => (
-          <li key={video.id}>
+          <div
+            key={video.id}
+            style={{
+              width: "300px",
+              border: "1px solid #ccc",
+              borderRadius: "10px",
+              padding: "10px",
+            }}
+          >
             <p>{index + 1}位</p>
 
             <a
@@ -20,14 +34,14 @@ export default async function Home() {
               <img
                 src={video.snippet.thumbnails.medium.url}
                 alt={video.snippet.title}
-                width={320}
+                width="100%"
               />
 
               <p>{video.snippet.title}</p>
             </a>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </main>
   );
 }
