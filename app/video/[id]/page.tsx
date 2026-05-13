@@ -6,11 +6,14 @@ export default async function VideoPage({ params }: any) {
   );
 
   const data = await res.json();
-  const video = data.items[0];
 
-  if (!video) {
+  console.log(data); // ← デバッグ用（見てもOK）
+
+  if (!data.items || data.items.length === 0) {
     return <p>動画が見つかりません</p>;
   }
+
+  const video = data.items[0];
 
   return (
     <main>
@@ -29,10 +32,10 @@ export default async function VideoPage({ params }: any) {
       <a
         href={`https://www.youtube.com/watch?v=${video.id}`}
         target="_blank"
+        rel="noopener noreferrer"
       >
         ▶ YouTubeで見る
       </a>
     </main>
   );
 }
-``
