@@ -1,11 +1,11 @@
 export default async function VideoPage(props: any) {
   const id = props.params?.id;
 
-  const API_KEY = process.env.YOUTUBE_API_KEY;
-
   if (!id) {
     return <p>IDが取得できていません</p>;
   }
+
+  const API_KEY = process.env.YOUTUBE_API_KEY;
 
   const res = await fetch(
     `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${id}&key=${API_KEY}`,
@@ -15,12 +15,7 @@ export default async function VideoPage(props: any) {
   const data = await res.json();
 
   if (!data.items || data.items.length === 0) {
-    return (
-      <main>
-        <h1>動画が見つかりません</h1>
-        <p>ID: {id}</p>
-      </main>
-    );
+    return <p>動画が見つかりません</p>;
   }
 
   const video = data.items[0];
