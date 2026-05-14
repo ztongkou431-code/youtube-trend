@@ -1,5 +1,3 @@
-import { notFound } from "next/navigation";
-
 export default async function VideoPage({
   params,
 }: {
@@ -7,6 +5,7 @@ export default async function VideoPage({
 }) {
   const id = params.id;
 
+  // ✅ ID確認（これが超重要）
   if (!id) {
     return <p>IDが取得できていません</p>;
   }
@@ -21,7 +20,7 @@ export default async function VideoPage({
   const data = await res.json();
 
   if (!data.items || data.items.length === 0) {
-    notFound();
+    return <p>動画が見つかりません</p>;
   }
 
   const video = data.items[0];
@@ -46,3 +45,4 @@ export default async function VideoPage({
     </main>
   );
 }
+``
