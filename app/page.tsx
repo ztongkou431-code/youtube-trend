@@ -8,19 +8,13 @@ export default async function Home() {
     <main>
       <h1>YouTubeトレンド</h1>
 
-      <div>
-        {videos.map((video: any) => (
-          <div key={video.id}>
-            <Link href={`/video/${video.id}`}>
-              <div>
-                <img src={video.snippet.thumbnails.medium.url} />
-
-                <p>{video.snippet.title}</p>
-              </div>
-            </Link>
-          </div>
-        ))}
-      </div>
+      {videos.map((video: any) => (
+        <div key={video.id}>
+          <Link href={`/video/${video.id}`}>
+            <p>{video.snippet.title}</p>
+          </Link>
+        </div>
+      ))}
     </main>
   );
 }
