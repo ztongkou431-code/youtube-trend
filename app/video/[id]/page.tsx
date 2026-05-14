@@ -1,5 +1,11 @@
-export default async function VideoPage(props: any) {
-  const id = props.params?.id;
+import { notFound } from "next/navigation";
+
+export default async function VideoPage({
+  params,
+}: {
+  params: { id: string };
+}) {
+  const id = params.id;
 
   if (!id) {
     return <p>IDが取得できていません</p>;
@@ -15,7 +21,7 @@ export default async function VideoPage(props: any) {
   const data = await res.json();
 
   if (!data.items || data.items.length === 0) {
-    return <p>動画が見つかりません</p>;
+    notFound();
   }
 
   const video = data.items[0];
