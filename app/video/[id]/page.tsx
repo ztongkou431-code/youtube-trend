@@ -11,10 +11,18 @@ export default function VideoPage({
         width="560"
         height="315"
         src={`https://www.youtube.com/embed/${params.id}`}
-        title="YouTube video"
         frameBorder="0"
         allowFullScreen
       ></iframe>
+
+      <p>
+        <a
+          href={`https://www.youtube.com/watch?v=${params.id}`}
+          target="_blank"
+        >
+          ▶ YouTubeで見る
+        </a>
+      </p>
     </main>
   );
 }
