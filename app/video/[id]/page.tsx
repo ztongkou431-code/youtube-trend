@@ -1,9 +1,12 @@
-export default function VideoPage({ params }: any) {
+export default function VideoPage({
+  params,
+}: {
+  params: { id: string };
+}) {
   return (
     <main style={{ padding: "20px" }}>
       <h1>IDは {params.id}</h1>
 
-      {/* ✅ 動画埋め込み */}
       <iframe
         width="560"
         height="315"
