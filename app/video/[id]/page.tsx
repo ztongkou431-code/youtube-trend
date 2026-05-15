@@ -3,25 +3,28 @@ export default function VideoPage({
 }: {
   params: { id: string };
 }) {
+  const id = params.id;
+
   return (
     <main style={{ padding: "20px" }}>
-      <h1>動画ページ</h1>
+      <h1>IDは {id}</h1>
 
-      {/* ✅ iframe（再生できる動画だけ表示） */}
+      {/* ✅ iframe */}
       <iframe
         width="560"
         height="315"
-        src={`https://www.youtube.com/embed/${params.id}`}
-        title="YouTube video"
+        src={`https://www.youtube.com/embed/${id}`}
+        title="YouTube video player"
         frameBorder="0"
         allowFullScreen
       ></iframe>
 
-      {/* ✅ 必ずこれ（完全に安全な導線） */}
+      {/* ✅ ここが重要（ちゃんと href を書く） */}
       <p style={{ marginTop: "20px" }}>
         <a
-          href={`https://www.youtube.com/watch?v=${params.id}`}
+          href={`https://www.youtube.com/watch?v=${id}`}
           target="_blank"
+          rel="noopener noreferrer"
         >
           ▶ YouTubeで見る
         </a>
