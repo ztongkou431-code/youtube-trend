@@ -19,7 +19,7 @@ export default function VideoPage({
         allowFullScreen
       ></iframe>
 
-      {/* ✅ ここが重要（ちゃんと href を書く） */}
+      {/* ✅ 正しいリンク（ここが今回のバグ修正） */}
       <p style={{ marginTop: "20px" }}>
         <a
           href={`https://www.youtube.com/watch?v=${id}`}
