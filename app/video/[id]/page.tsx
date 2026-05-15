@@ -7,6 +7,7 @@ export default function VideoPage({
     <main style={{ padding: "20px" }}>
       <h1>IDは {params.id}</h1>
 
+      {/* ✅ iframe（再生できる動画だけ表示される） */}
       <iframe
         width="560"
         height="315"
@@ -15,7 +16,8 @@ export default function VideoPage({
         allowFullScreen
       ></iframe>
 
-      <p>
+      {/* ✅ 必ずこれを置く（重要） */}
+      <p style={{ marginTop: "20px" }}>
         <a
           href={`https://www.youtube.com/watch?v=${params.id}`}
           target="_blank"
