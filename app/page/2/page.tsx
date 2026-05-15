@@ -3,33 +3,21 @@ import { getTrendingVideos } from "../../../lib/youtube";
 
 export default async function Page2() {
   const videos = await getTrendingVideos();
-  const secondPage = videos.slice(50, 100);
+  const second = videos.slice(50, 100);
 
   return (
     <main>
-      <h1>🔥 YouTubeトレンドランキング（続き）</h1>
+      <h1>🔥 YouTubeトレンド（続き）</h1>
 
-      <div className="grid">
-        {secondPage.map((video: any, index: number) => (
-          <div key={video.id}>
-            <p>{index + 51}位</p>
-
+      <ul>
+        {second.map((video: any, index: number) => (
+          <li key={video.id}>
             <Link href={`/video/${video.id}`}>
-              <img
-                src={video.snippet.thumbnails.medium.url}
-                alt={video.snippet.title}
-              />
-
-              <p>{video.snippet.title}</p>
-
-              <p>
-                この動画では「{video.snippet.title}」について紹介されています。
-                現在YouTubeで人気のトレンド動画です。
-              </p>
+              {index + 51}位：{video.snippet.title}
             </Link>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
 
       <Link href="/">← 戻る</Link>
     </main>
