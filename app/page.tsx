@@ -16,33 +16,33 @@ export default async function Home() {
         }}
       >
         {videos.map((video: any, index: number) => (
-          <div
-            key={video.id}
-            style={{
-              border: "1px solid #ccc",
-              borderRadius: "10px",
-              padding: "10px",
-            }}
-          >
-            <p>{index + 1}位</p>
+          <Link key={video.id} href={`/video/${video.id}`}>
+            <div
+              style={{
+                border: "1px solid #ccc",
+                borderRadius: "10px",
+                padding: "10px",
+                cursor: "pointer",
+              }}
+            >
+              <p>{index + 1}位</p>
 
-            {/* ✅ 正しいリンク（完全に動く） */}
-            <Link href={`/video/${video.id}`}>
               <img
                 src={video.snippet.thumbnails.medium.url}
                 alt={video.snippet.title}
+                style={{ width: "100%", borderRadius: "8px" }}
               />
 
               <p>{video.snippet.title}</p>
-            </Link>
-          </div>
+            </div>
+          </Link>
         ))}
       </div>
 
-      {/* ✅ ページ2リンク復活 */}
       <div style={{ marginTop: "20px" }}>
         <Link href="/page/2">次へ →</Link>
       </div>
     </main>
   );
 }
+``

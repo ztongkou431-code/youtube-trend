@@ -7,7 +7,7 @@ export default async function Page2() {
 
   return (
     <main style={{ padding: "20px" }}>
-      <h1>🔥 続き</h1>
+      <h1>🔥 YouTubeトレンド（続き）</h1>
 
       {second.map((video: any, index: number) => (
         <div key={video.id}>
@@ -17,7 +17,9 @@ export default async function Page2() {
         </div>
       ))}
 
-      <Link href="/">← 戻る</Link>
+      <div style={{ marginTop: "20px" }}>
+        <Link href="/">← 戻る</Link>
+      </div>
     </main>
   );
 }
