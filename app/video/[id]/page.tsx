@@ -7,18 +7,17 @@ export default function VideoPage({
     <main style={{ padding: "20px" }}>
       <h1>動画ページ</h1>
 
-      {/* ✅ 正しい埋め込み */}
+      {/* ✅ iframe（再生できる動画だけ表示） */}
       <iframe
         width="560"
         height="315"
         src={`https://www.youtube.com/embed/${params.id}`}
         title="YouTube video"
         frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
-      />
+      ></iframe>
 
-      {/* ✅ 必ず用意（埋め込み不可対策） */}
+      {/* ✅ 必ずこれ（完全に安全な導線） */}
       <p style={{ marginTop: "20px" }}>
         <a
           href={`https://www.youtube.com/watch?v=${params.id}`}
