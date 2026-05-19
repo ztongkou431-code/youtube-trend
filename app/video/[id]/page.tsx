@@ -6,38 +6,35 @@ export default function VideoPage() {
   const params = useParams();
   const videoId = params?.id;
 
-  console.log("videoId:", videoId);
-
-  // ✅ IDがないとき
   if (!videoId) {
-    return (
-      <div style={{ padding: "20px" }}>
-        <h1>動画IDがありません</h1>
-        <p>URLを確認してください</p>
-      </div>
-    );
+    return <div className="p-6 text-center">動画が見つかりません</div>;
   }
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div className="min-h-screen bg-gray-100 p-6">
+      <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-6">
 
-      <iframe
-        width="800"
-        height="450"
-        src={`https://www.youtube.com/embed/${videoId}`}
-        title="YouTube video"
-        frameBorder="0"
-        allowFullScreen
-      />
+        <h1 className="text-xl font-bold mb-4">YouTube動画</h1>
 
-      <br />
+        <div className="aspect-video w-full">
+          <iframe
+            className="w-full h-full rounded-lg"
+            src={`https://www.youtube.com/embed/${videoId}`}
+            title="YouTube video"
+            allowFullScreen
+          ></iframe>
+        </div>
 
-      <a
-        href={`https://www.youtube.com/watch?v=${videoId}`}
-        target="_blank"
-      >
-        ▶ YouTubeで見る
-      </a>
+        <a
+          href={`https://www.youtube.com/watch?v=${videoId}`}
+          className="inline-block mt-4 bg-red-500 text-white px-4 py-2 rounded-lg"
+          target="_blank"
+        >
+          ▶ YouTubeで開く
+        </a>
+
+      </div>
     </div>
   );
 }
+``
