@@ -20,7 +20,6 @@ export default function VideoPage() {
 
   return (
     <div style={{ padding: "20px" }}>
-      <h1>IDは {videoId}</h1>
 
       <iframe
         width="800"
