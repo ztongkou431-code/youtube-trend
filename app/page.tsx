@@ -6,7 +6,7 @@ export default async function Home() {
 
   return (
     <main style={{ padding: "20px" }}>
-      <h1>🔥 YouTubeトレンド</h1>
+      <h1>🔥 最新YouTubeトレンドランキングtop100</h1>
 
       <div
         style={{
